@@ -1,4 +1,4 @@
-name: Generate ASCII
+name: simple multijob
 on: push
 
 jobs:
