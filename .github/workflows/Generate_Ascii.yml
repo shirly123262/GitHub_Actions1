@@ -12,7 +12,7 @@ jobs:
           run : ls
 
         - name: Execute the shell scripts
-          run: ./ascii_script.sh
+          run: ./ascii_scripts.sh
        # - name: Install Cowsay Program
         #  run: sudo apt-get install cowsay -y
 
