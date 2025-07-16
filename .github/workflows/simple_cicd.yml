@@ -15,7 +15,7 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
             name: dragon-text-file
-            path: path/to/artifact/world.txt # check github marketplace actions
+            path: dragon.txt # check github marketplace actions
           
     test_job:
         # we need to using upload and download artifacts to use the file from previous jobs because both are running in different machine
