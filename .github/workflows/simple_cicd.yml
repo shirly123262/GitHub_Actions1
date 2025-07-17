@@ -1,7 +1,7 @@
 name: simple multijob
 
 on:
-   workflow_dispatch:
+   workflow_dispatch: # for running workflow on manually 
 
 jobs:
     build_job:
@@ -34,6 +34,9 @@ jobs:
 
     deploy_job:
         needs: test_job #[build_job,test_job]
+        concurrency: 
+          group: prod-deploy
+          cancel-in-progress: true
         runs-on: ubuntu-latest
         steps:
         - name: download dragon artifacts
