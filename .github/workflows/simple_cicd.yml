@@ -2,7 +2,7 @@ name: simple multijob
 
 on:
    workflow_dispatch: # for running workflow on manually 
-
+   push: 
 jobs:
     build_job:
         runs-on: ubuntu-latest
@@ -33,6 +33,7 @@ jobs:
           run : grep -i "dragon" dragon.txt
 
     deploy_job:
+        if: github.ref == '/refs/heads/main' #check its main branch then execute using githu contexts
         needs: test_job #[build_job,test_job]
         concurrency: 
           group: prod-deploy
